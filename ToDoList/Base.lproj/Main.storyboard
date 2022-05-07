@@ -39,6 +39,9 @@
                                 <rect key="frame" x="0.0" y="537" width="320" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add new To Do"/>
+                                <connections>
+                                    <action selector="addNewToDo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iWp-HO-jNI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,6 +65,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="49e-bO-vqZ"/>
+                    <connections>
+                        <outlet property="deadlineDatePicker" destination="jFR-rc-cPf" id="5Af-fB-2b0"/>
+                        <outlet property="textTextField" destination="AsM-Vr-Vjx" id="2PK-lD-nA0"/>
+                        <outlet property="titleTextField" destination="dcT-OS-6z9" id="uzg-WT-KPw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

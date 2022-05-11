@@ -8,11 +8,11 @@
 import Foundation
 import RealmSwift
 
-class ToDoModel: Object {
+class ToDoModel {
     var title: String
     var text: String
-//    var date: String
-//    var deadline: String
+    var date: String
+    var deadline: String
     var statusText: String
     
     enum status: String {
@@ -30,6 +30,16 @@ class ToDoModel: Object {
     init(title: String, text: String, date: Date) {
         self.title = title
         self.text = text
+        self.date = Date().string()
+        self.deadline = date.string()
         self.statusText = status.work.statusText
+    }
+}
+
+extension Date {
+    func string() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        return formatter.string(from: self)
     }
 }

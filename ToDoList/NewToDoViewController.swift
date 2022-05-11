@@ -13,7 +13,6 @@ class NewToDoViewController: UIViewController {
     @IBOutlet weak var textTextField: UITextField!
     @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,5 +21,10 @@ class NewToDoViewController: UIViewController {
         guard let title = titleTextField.text else { return }
         guard let text = textTextField.text else { return }
         let newToDo = ToDoModel(title: title, text: text, date: deadlineDatePicker.date)
+        print("!" + newToDo.title + "!")
+        print(newToDo.text)
+        print(newToDo.statusText)
+        print(newToDo.date)
+        print(newToDo.deadline)
     }
 }

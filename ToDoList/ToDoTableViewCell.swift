@@ -8,6 +8,13 @@
 import UIKit
 
 class ToDoTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var titleCellLabel: UILabel!
+    @IBOutlet weak var textCellLabel: UILabel!
+    @IBOutlet weak var statusCellLabel: UILabel!
+    @IBOutlet weak var dateCellLabel: UILabel!
+    @IBOutlet weak var deadlineCellLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

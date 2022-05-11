@@ -32,7 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="jFR-rc-cPf">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="jFR-rc-cPf">
                                 <rect key="frame" x="0.0" y="252.5" width="320" height="216"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7X-xU-qsg">
@@ -111,13 +111,80 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="494"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="gEn-Yq-TG8" customClass="ToDoTableViewCell" customModule="ToDoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" rowHeight="150" id="gEn-Yq-TG8" customClass="ToDoTableViewCell" customModule="ToDoList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEn-Yq-TG8" id="Qnj-6V-rXD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpu-yu-mRB">
+                                                    <rect key="frame" x="16" y="11" width="288" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLQ-UX-3Gt">
+                                                    <rect key="frame" x="16" y="31.5" width="288" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qaH-UM-Eun">
+                                                    <rect key="frame" x="16" y="121" width="288" height="18"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVY-8c-YO5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-UG-Oot">
+                                                            <rect key="frame" x="60" y="0.0" width="44.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbD-uO-Emc">
+                                                            <rect key="frame" x="120.5" y="0.0" width="28.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4i-G4-Mjw">
+                                                            <rect key="frame" x="165" y="0.0" width="57" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Deadline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tk8-Kx-XhS">
+                                                            <rect key="frame" x="238" y="0.0" width="50" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JLQ-UX-3Gt" firstAttribute="leading" secondItem="Qnj-6V-rXD" secondAttribute="leadingMargin" id="0At-uu-9Yc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qaH-UM-Eun" secondAttribute="trailing" id="1Xw-gC-FNw"/>
+                                                <constraint firstItem="qaH-UM-Eun" firstAttribute="leading" secondItem="Qnj-6V-rXD" secondAttribute="leadingMargin" id="c1y-07-vMI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JLQ-UX-3Gt" secondAttribute="trailing" id="eXs-XY-kQK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tpu-yu-mRB" secondAttribute="trailing" id="iQ8-6H-70u"/>
+                                                <constraint firstItem="JLQ-UX-3Gt" firstAttribute="top" secondItem="tpu-yu-mRB" secondAttribute="bottom" id="jhS-kM-tfi"/>
+                                                <constraint firstItem="tpu-yu-mRB" firstAttribute="leading" secondItem="Qnj-6V-rXD" secondAttribute="leadingMargin" id="mdx-1u-ROb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qaH-UM-Eun" secondAttribute="bottom" id="n7v-DA-myq"/>
+                                                <constraint firstItem="tpu-yu-mRB" firstAttribute="top" secondItem="Qnj-6V-rXD" secondAttribute="topMargin" id="pui-PF-xcd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateCellLabel" destination="hbD-uO-Emc" id="AHE-p7-Zg5"/>
+                                            <outlet property="deadlineCellLabel" destination="Tk8-Kx-XhS" id="eA5-wI-Q1F"/>
+                                            <outlet property="statusCellLabel" destination="HVY-8c-YO5" id="IxM-H8-m24"/>
+                                            <outlet property="textCellLabel" destination="JLQ-UX-3Gt" id="WZ8-nI-kax"/>
+                                            <outlet property="titleCellLabel" destination="tpu-yu-mRB" id="2F1-QO-IQS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -8,17 +8,17 @@
 import Foundation
 import RealmSwift
 
-class ToDoModel {
-    var title: String
-    var text: String
-    var date: String
-    var deadline: String
-    var statusText: String
+class ToDoModel: Object {
+    @objc dynamic var title = ""
+    @objc dynamic var text = ""
+    @objc dynamic var date = ""
+    @objc dynamic var deadline = ""
+    @objc dynamic var statusText = ""
     
     enum status: String {
         case work, complete, delete
-        
-        var statusText: String {
+
+        var myStatusText: String {
             switch self {
             case .work: return "В работе"
             case .complete: return "Завершено"
@@ -27,13 +27,13 @@ class ToDoModel {
         }
     }
     
-    init(title: String, text: String, date: Date) {
-        self.title = title
-        self.text = text
-        self.date = Date().string()
-        self.deadline = date.string()
-        self.statusText = status.work.statusText
-    }
+//    init(title: String, text: String, date: Date) {
+//        self.title = title
+//        self.text = text
+//        self.date = Date().string()
+//        self.deadline = date.string()
+//        self.statusText = status.work.myStatusText
+//    }
 }
 
 extension Date {
